@@ -16,32 +16,46 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Center(
+              child: Text('Electroshoe Onboarding',
+                  style: ktextStyle.copyWith(
+                    color: colourBlue,
+                    fontSize: 25,
+                  ))),
+        ),
         body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Center(
-          child: ClipPolygon(
-              sides: 6,
-              borderRadius: 20.0,
-              rotate: 90.0,
-              boxShadows: [PolygonBoxShadow(color: colourBlue, elevation: 8.0)],
-              child: Stack(children: [
-                Container(
-                    decoration: const BoxDecoration(
-                        border: Border(bottom: BorderSide(color: colourBlue)),
-                        boxShadow: [
-                      BoxShadow(
-                        color: colourPrimaryBlue,
-                      )
-                    ])),
-                Container(
-                    margin: const EdgeInsets.all(10),
-                    padding: const EdgeInsets.all(10),
-                    child: const HexagonShapeWidget()),
-              ])),
-        )
-        ,const AnimatedButton()
-      ]),
-    ));
+          padding: const EdgeInsets.all(8.0),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Center(
+              child: ClipPolygon(
+                  sides: 6,
+                  borderRadius: 20.0,
+                  rotate: 90.0,
+                  boxShadows: [
+                    PolygonBoxShadow(color: colourBlue, elevation: 8.0)
+                  ],
+                  child: Stack(children: [
+                    Container(
+                        decoration: const BoxDecoration(
+                            border:
+                                Border(bottom: BorderSide(color: colourBlue)),
+                            boxShadow: [
+                          BoxShadow(
+                            color: colourPrimaryBlue,
+                          )
+                        ])),
+                    Container(
+                        margin: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
+                        child: const HexagonShapeWidget()),
+                  ])),
+            ),
+            const AnimatedButton()
+          ]),
+        ));
   }
 }
